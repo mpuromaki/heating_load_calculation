@@ -48,7 +48,9 @@ pip install pandas matplotlib numpy jupyter jupytext
 
 ## Running the Script
 
-You can run the script in a Jupyter Notebook or directly as a Python file. To run as a script:
+You can run the script in a Jupyter Notebook or directly as a Python file.
+
+### Option 1: Run as a Python Script
 
 ```bash
 python heating_load.py
@@ -61,6 +63,26 @@ This will:
 * Estimate daily heating usage
 * Plot base load, usage, and efficiency per year
 
+### Option 2: Run in Jupyter Notebook
+
+To work with the script interactively:
+
+1. Convert the Python script to a notebook (if it's not already synced):
+
+```bash
+jupytext --to notebook heating_load.py
+```
+
+2. Start Jupyter:
+
+```bash
+jupyter notebook
+```
+
+3. Open `heating_load.ipynb` in your browser.
+
+You can step through and modify the script interactively within the notebook interface.
+
 ## Output
 
 * Normalized CSV files in `normalised/`
@@ -68,16 +90,16 @@ This will:
 * Yearly charts displayed showing:
 
   * Heating and base electricity usage vs. outside temperature
-  * Heating efficiency (kWh/\u00b0C) per day
+  * Heating efficiency (kWh/°C) per day
 
 ## Configuration
 
 Edit the following variables in `heating_load.py` to suit your needs:
 
 ```python
-INTERNAL_TEMPERATURE = 22.0  # \u00b0C
-NO_HEAT_TEMP_MIN = 18        # \u00b0C
-NO_HEAT_TEMP_MAX = 22        # \u00b0C
+INTERNAL_TEMPERATURE = 22.0  # °C
+NO_HEAT_TEMP_MIN = 18        # °C
+NO_HEAT_TEMP_MAX = 22        # °C
 ADDRESS = "<YOUR ADDRESS HERE>"
 ```
 
